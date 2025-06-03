@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--definicion del template del wizard_report    -->
+    <template id="caracteristicas_report_template_wizard">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="oe_structure"/>
+                <div class="page">
+                    <div class="text-center"><h1>Informe Histórico</h1></div>
+                    <p>Desde: <span t-esc="form_data['weight_start']"/> Kg</p>
+                    <p>Hasta: <span t-esc="form_data['weight_end']"/> Kg</p>
+                </div>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Peso</th>
+                            <th>Altura</th>
+                            <th>IMC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="weights" t-as="w">
+                            <td><span t-esc="w['user_id'][1]"/></td>
+                            <td><span t-esc="w['weight']"/></td>
+                            <td><span t-esc="w['height']"/></td>
+                            <td><span t-esc="w['bmi']"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </t>
+        </t>
+    </template>
+
+    <!--definicion de la accion    -->
+    <record id="action_caracteristicas_wizard" model="ir.actions.report">
+        <field name="name">Caracteristicas</field>
+        <field name="model">caracteristicas.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">persona.caracteristicas_report_template_wizard</field>
+        <field name="report_file">persona.caracteristicas_report_template_wizard</field>
+        <field name="binding_model_id" ref="model_caracteristicas_report_wizard"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

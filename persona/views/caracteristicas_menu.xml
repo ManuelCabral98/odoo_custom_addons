@@ -1,0 +1,8 @@
+<!-- caracteristicas_menu.xml -->
+<odoo>
+    <menuitem id="menu_caracteristicas"
+              name="Caracteristicas"
+              parent="base.menu_users"
+              action="action_caracteristicas"
+              sequence="10"/>
+</odoo>

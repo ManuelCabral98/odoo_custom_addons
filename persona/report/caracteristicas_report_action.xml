@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="action_report_caracteristicas" model="ir.actions.report">
+            <field name="name">Caracteristicas Históricas</field>
+            <field name="model">caracteristicas</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">persona.report_caracteristicas_document</field>
+            <field name="report_file">persona.report_caracteristicas_document</field>
+            <field name="binding_model_id" ref="model_caracteristicas"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

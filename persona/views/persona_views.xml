@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="persona_action" model="ir.actions.act_window">
+        <field name="name">Create a new person</field>
+        <field name="res_model">persona</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- tree view -->
+    <record id="persona_tree_view" model="ir.ui.view">
+        <field name="name">persona.tree</field>
+        <field name="model">persona</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="father"/>
+                <field name="note"/>
+                <field name="active"/>
+                <field name="address"/>
+                <field name="gender"/>
+                <field name="birthdate"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- form view -->
+     <record id="persona_form_view" model="ir.ui.view">
+        <field name="name">persona.form</field>
+        <field name="model">persona</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="father"/>
+                        <field name="note"/>
+                        <field name="active"/>
+                        <field name="address"/>
+                        <field name="gender"/>
+                        <field name="birthdate"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

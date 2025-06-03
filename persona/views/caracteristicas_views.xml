@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="action_caracteristicas" model="ir.actions.act_window">
+        <field name="name">Caracteristicas</field>
+        <field name="res_model">caracteristicas</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="view_caracteristicas_tree" model="ir.ui.view">
+        <field name="name">caracteristicas.tree</field>
+        <field name="model">caracteristicas</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="user_id"/>
+                <field name="birthdate"/>
+                <field name="age"/>
+                <field name="height"/>
+                <field name="weight"/>
+                <field name="bmi"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_caracteristicas_form" model="ir.ui.view">
+        <field name="name">caracteristicas.form</field>
+        <field name="model">caracteristicas</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="user_id"/>
+                        <field name="birthdate"/>
+                        <field name="age"/>
+                        <field name="height"/>
+                        <field name="weight"/>
+                        <field name="bmi" readonly="1" force_save="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

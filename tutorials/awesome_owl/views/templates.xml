@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="playground_page" name="Awesome Owl">
+            <t t-call-assets="awesome_owl.assets_playground"/>
+            <div>
+                <h1>OWL Playground</h1>
+            </div>
+        </template>
+    </data>
+</odoo>

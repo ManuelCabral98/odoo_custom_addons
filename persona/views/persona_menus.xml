@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="persona_root_menu" name="Persona"/>
+    <menuitem id="persona_first_level_menu" name="Personas" parent="persona_root_menu"/>
+    <menuitem id="persona_menu_action" name="Ver Personas" parent="persona_first_level_menu" action="persona_action"/>
+</odoo>

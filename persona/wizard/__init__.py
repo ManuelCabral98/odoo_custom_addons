@@ -1,0 +1,1 @@
+from . import caracteristicas_report_wizard

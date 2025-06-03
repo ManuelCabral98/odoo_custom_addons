@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--definicion de la vista wizard-->
+   <record id="caracteristicas_report_wizard_view" model="ir.ui.view">
+        <field name="name">caracteristicas.report.wizard.view.form</field>
+        <field name="model">caracteristicas.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Informe de peso">
+                <sheet>
+                    <group>
+                        <field name="weight_start" />
+                        <field name="weight_end" />
+                    </group>
+                    <footer>
+                        <button name="action_search_weights" type="object" string="Filtrar" class="btn-primary" />
+                        <button string="Cancelar" class="btn-secondary" special="cancel" />
+                    </footer>
+                </sheet>
+            </form>
+        </field>
+   </record>
+
+    <!--definicion de la accion wizard    -->
+    <record id="caracteristicas_report_wizard_action" model="ir.actions.act_window">
+        <field name="name">Weights inform</field>
+        <field name="res_model">caracteristicas.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="caracteristicas_report_wizard_view" />
+        <field name="target">new</field>
+    </record>
+
+    <!--definicion del menu wizard-->
+    <menuitem
+        id="caracteristicas_report_menu"
+        name="Weights inform"
+        action="caracteristicas_report_wizard_action"
+        parent="base.menu_users"
+        sequence="10" />
+</odoo>
